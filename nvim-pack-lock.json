@@ -1,5 +1,13 @@
 {
   "plugins": {
+    "nvim-tree.lua": {
+      "rev": "b8b44b6a2494d086a9177251a119f9daec6cace8",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
+    "nvim-web-devicons": {
+      "rev": "6788013bb9cb784e606ada44206b0e755e4323d7",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
     "vague.nvim": {
       "rev": "fcc283576764474ccfbbcca240797d5d7f4d8a78",
       "src": "https://github.com/vague-theme/vague.nvim"

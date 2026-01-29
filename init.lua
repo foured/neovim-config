@@ -9,14 +9,16 @@ vim.o.signcolumn = "yes"
 vim.o.fillchars = "eob: "
 vim.o.swapfile = false
 vim.o.winborder = "rounded"
+vim.o.termguicolors = true
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.have_nerd_font = true
+vim.g.have_nerd_font = false
 
 -- keymap
 vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format)
 vim.keymap.set('n', '<leader>e', vim.cmd.NvimTreeToggle)
+vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition)
 
 -- plugins
 vim.pack.add({
@@ -66,8 +68,16 @@ require("nvim-tree").setup({
     renderer = {
         icons = {
             show = {
-                git = false,
+                -- git = false,
             }
         }
+    },
+    filters = {
+        custom = {
+            ".DS_Store",
+        },
+    },
+    git = {
+        ignore = false,
     }
 })

@@ -52,6 +52,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.completion.enable(true, client.id, ev.buf, {
                 autotrigger = true,
             })
+            vim.keymap.set('i', '<c-s>', function()
+                vim.lsp.completion.get()
+            end)
         end
     end
 })
@@ -102,8 +105,8 @@ require("bufferline").setup {
         numbers = function(opts)
             return string.format('%s.%s', opts.lower(opts.id), opts.lower(opts.ordinal))
         end,
-
     }
 }
 
+-- nvim-autopairs
 require("nvim-autopairs").setup({})

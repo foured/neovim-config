@@ -13,7 +13,7 @@ vim.o.termguicolors = true
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- keymap
 vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format)
@@ -25,6 +25,7 @@ vim.pack.add({
     { src = "https://github.com/vague-theme/vague.nvim" },
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     { src = "https://github.com/nvim-tree/nvim-tree.lua" },
+    { src = "https://github.com/akinsho/bufferline.nvim" },
 })
 
 -- color scheme
@@ -54,7 +55,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
--- diagnostics 
+-- diagnostics
 vim.diagnostic.config({
     virtual_text = true,
 })
@@ -81,3 +82,25 @@ require("nvim-tree").setup({
         ignore = false,
     }
 })
+
+
+-- bufferline
+require("bufferline").setup {
+    options = {
+        diagnostics = "nvim_lsp",
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "File Explorer",
+                text_align = "center",
+                separator = true
+            }
+        },
+        show_buffer_close_icons = false,
+        show_close_icon = false,
+        numbers = function(opts)
+            return string.format('%s.%s', opts.lower(opts.id), opts.lower(opts.ordinal))
+        end,
+
+    }
+}

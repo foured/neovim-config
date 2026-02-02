@@ -4,6 +4,10 @@
       "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
       "src": "https://github.com/akinsho/bufferline.nvim"
     },
+    "nvim-autopairs": {
+      "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
     "nvim-tree.lua": {
       "rev": "b8b44b6a2494d086a9177251a119f9daec6cace8",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
